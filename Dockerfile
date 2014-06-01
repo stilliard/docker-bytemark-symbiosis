@@ -15,9 +15,9 @@ RUN wget -O- https://secure.bytemark.co.uk/key/repositories-2006.key | apt-key a
 RUN apt-get -y update
 RUN apt-get -y install bytemark-symbiosis
 
-# turn off monitoring on pure-ftp (haven't)
+# turn off monitoring on pure-ftp
 RUN rm /etc/symbiosis/monit.d/pure-ftpd
 
 CMD /project/test.sh
 
-EXPOSE 80
+EXPOSE 80 21/tcp
