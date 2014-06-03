@@ -16,6 +16,9 @@ RUN wget -O- https://secure.bytemark.co.uk/key/repositories-2006.key | apt-key a
 RUN apt-get -y update
 RUN apt-get -y install bytemark-symbiosis
 
+# Enable the ssl localhost (for the apache2 https test, as without this is would randomly fail about 4 out of 5 times...)
+RUN a2ensite default-ssl && a2enmod ssl
+
 CMD service bytemark-symbiosis start && \
     symbiosis-monit && \
     /bin/bash
