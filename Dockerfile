@@ -1,5 +1,5 @@
 
-FROM debian:wheezy
+FROM stilliard/pure-ftpd
 
 MAINTAINER Andrew Stilliard andrew.stilliard@gmail.com
 
