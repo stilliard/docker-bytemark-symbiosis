@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# startup services
-service mysql start
-service apache2 start
-service cron start
-service bytemark-symbiosis start
-
 # make directory structure
 mkdir -p /srv/demo.com/{config,public/{htdocs,logs}}
 
@@ -23,5 +17,3 @@ chmod 775 /srv/demo.com/public/htdocs -R
 # run symbiosis configuration scripts to do the rest
 symbiosis-httpd-configure -v
 
-# start shell
-/bin/bash
