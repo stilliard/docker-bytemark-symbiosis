@@ -7,7 +7,7 @@ MAINTAINER Andrew Stilliard andrew.stilliard@gmail.com
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update
 RUN apt-get -y upgrade
-RUN apt-get install -y build-essential wget curl less vim tmux
+RUN apt-get install -y build-essential wget curl less vim
 
 # install symbiosis
 RUN echo "deb http://symbiosis.bytemark.co.uk/wheezy-rc3 ./" > /etc/apt/sources.list.d/symbiosis.list
