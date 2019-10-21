@@ -14,7 +14,6 @@ RUN sed -i 's/exit 101/exit 0/' /usr/sbin/policy-rc.d
 
 # install symbiosis
 RUN echo "deb http://repo.bytemark.co.uk/symbiosis/jessie ./" > /etc/apt/sources.list.d/symbiosis.list
-RUN wget -O- https://secure.bytemark.co.uk/key/repositories-2006.key | apt-key add -
 RUN wget -O- https://secure.bytemark.co.uk/key/repositories-2014.key | apt-key add -
 RUN apt-get -y update
 
