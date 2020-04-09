@@ -1,12 +1,11 @@
 
-FROM stilliard/pure-ftpd
+FROM stilliard/pure-ftpd:jessie-latest
 
 # feel free to change this ;)
 MAINTAINER Andrew Stilliard <andrew.stilliard@gmail.com>
 
 # initial setup and tools (inc vim)
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -y update
 RUN apt-get install -y build-essential wget less vim
 
 # fix starting services for a minute as installing bytemark-symbiosis requires this
@@ -19,7 +18,7 @@ RUN wget -O- https://secure.bytemark.co.uk/key/repositories-2014.key | apt-key a
 RUN apt-get -y update
 
 # for now, ignore errors, TODO check and fix these
-RUN apt-get -y install bytemark-symbiosis apache2; exit 0
+RUN apt-get -y install bytemark-symbiosis; exit 0
 
 # disable ssl mod for now too
 RUN a2dismod ssl
