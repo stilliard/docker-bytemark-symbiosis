@@ -6,6 +6,7 @@ MAINTAINER Andrew Stilliard <andrew.stilliard@gmail.com>
 
 # initial setup and tools (inc vim)
 ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update
 RUN apt-get install -y build-essential wget less vim
 
 # fix starting services for a minute as installing bytemark-symbiosis requires this
